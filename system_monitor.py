@@ -15,10 +15,26 @@ while True:
 
 count = 0
 while count < numOfReadings:
-    cpu = psutil.cpu_percent()
+    cpu_usage = psutil.cpu_percent()
+    memory_usage = psutil.virtual_memory()
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 
-    print(f"CPU Usage: {cpu}% at {timestamp}")
+    print(f"CPU Usage: {cpu_usage}%  {timestamp}\n")
+    print("Memory Usage:")
+    print(f"  Total:     {memory_usage.total}")
+    print(f"  Available: {memory_usage.available}")
+    print(f"  Percent:   {memory_usage.percent}%")
+    print(f"  Used:      {memory_usage.used}")
+    print(f"  Free:      {memory_usage.free}")
+    print(f"  Active:    {memory_usage.active}")
+    print(f"  Inactive:  {memory_usage.inactive}")
+    print(f"  Buffers:   {memory_usage.buffers}")
+    print(f"  Cached:    {memory_usage.cached}")
+    print(f"  Shared:    {memory_usage.shared}")
+    print(f"  Slab:      {memory_usage.slab}")
+    print(f"\nat {timestamp}")
+    print("------------------------------")
+
     count += 1
     time.sleep(1)
     
