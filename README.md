@@ -148,3 +148,11 @@ often used to group things like
 - basic file paths
 - core application behaviours
 - and other similar fundamental settings.
+
+
+next we create a config.ini file:
+```ini
+[General]
+log_file_name = system_monitor.log
+monitoring_interval = 1
+```
