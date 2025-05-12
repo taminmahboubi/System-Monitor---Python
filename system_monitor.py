@@ -8,6 +8,8 @@ while True:
     
     if numOfReadings.isdigit():
         numOfReadings = int(numOfReadings)
+        log_file = open("system_monitor.log", "a")
+        log_file.write("\n")
         break
     else:
         print("Invalid Input! Please enter a number")
@@ -18,6 +20,8 @@ while count < numOfReadings:
     cpu_usage = psutil.cpu_percent()
     memory_usage = psutil.virtual_memory()
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+
+    log_file.write(f"CPU Usage: {cpu_usage}%, Memory Total: {memory_usage.total}, Memory Used: {memory_usage.used}, Timestamp: {timestamp}\n")
 
     print(f"CPU Usage: {cpu_usage}%  {timestamp}\n")
     print("Memory Usage:")
@@ -37,4 +41,6 @@ while count < numOfReadings:
 
     count += 1
     time.sleep(1)
+    
+log_file.close()
     

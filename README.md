@@ -108,3 +108,43 @@ while count < numOfReadings:
     count += 1
     time.sleep(1)
 ```
+
+# Logging the file
+Next need to log the information into a file, using the code:
+```python
+log_file = open("system_monitor.log", "a")
+```
+this will not only append "a" new data into the file, but also create it if there is no file (in this case, "system_monitor.log").
+
+Write in the log file:
+```python
+log_file.write(f"CPU Usage: {cpu_usage}%, Memory Total: {memory.total}, Memory Used: {memory.used}, Timestamp: {timestamp}\n")
+```
+
+finally, close the log file at the end:
+```python
+log_file.close()
+```
+
+------
+# Reading configuration from a file
+For flexibility, reading the configuration from a file is a better step, as opposed to having everything hard coded in the Python script.
+
+1. going to be using an `.ini` file format:
+- this is a simple text based format with sections and key-value pairs.
+
+2. create the configuration file, and put the setting in it via the chosen format.
+
+3. read the file in Python (using Pythons built-in `configparser` module)
+
+
+`.ini` file:
+is a way to organize settings for a program.
+
+so first, creating an ini file, simple, `touch config.ini`
+
+`[general]` usually the standard for .ini files, a section to hold the primary configuration settings of an application.
+often used to group things like 
+- basic file paths
+- core application behaviours
+- and other similar fundamental settings.
