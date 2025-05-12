@@ -1,6 +1,15 @@
 import time
 import psutil
+import configparser
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Access the log file name from the [General] section 
+log_file_name = config['General']['log_file_name']
+
+# Access the monitoring interval from the [General] section and convert it to an integer
+monitoring_interval = int(config['General']['monitoring_interval'])
 
 
 while True:

@@ -156,3 +156,14 @@ next we create a config.ini file:
 log_file_name = system_monitor.log
 monitoring_interval = 1
 ```
+
+# Reading config files
+
+in order to read `config.ini`, need to implement Pythons built-in `configparser` module.
+
+1. First step is to import it 
+- `import configparser`
+2. Create a `configparser` object:
+- `config = configparser.ConfigParser()`
+3. Read the `config.ini` file:
+- `config.read('config.ini')`
