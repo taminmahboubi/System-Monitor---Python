@@ -167,3 +167,12 @@ in order to read `config.ini`, need to implement Pythons built-in `configparser`
 - `config = configparser.ConfigParser()`
 3. Read the `config.ini` file:
 - `config.read('config.ini')`
+
+
+# CONCLUSION:
+What was achieved:
+- Basic system monitoring (CPU and memory usage).
+- Displaying information with timestamps.
+- User input and validation.
+- Logging data to a file.
+- Reading configuration from an external file.
